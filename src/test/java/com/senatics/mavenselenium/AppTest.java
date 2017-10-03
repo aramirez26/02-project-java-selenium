@@ -24,7 +24,7 @@ public class AppTest {
 @Before
   public void setUp() throws Exception {
     //System.setProperty("webdriver.chrome.driver", "mavenproject1/drivers/chromedriver.exe");
-    System.setProperty("webdriver.chrome.driver", "mavenproject1/drivers/chromedriver");
+    System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
     driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
   }
