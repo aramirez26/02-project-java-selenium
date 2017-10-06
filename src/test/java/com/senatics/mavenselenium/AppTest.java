@@ -32,7 +32,7 @@ public class AppTest {
   @Test
   public void testregistrarClientes() throws Exception {
      
-    baseUrl = "http://10.0.20.7:8083";
+    baseUrl = "http://10.255.254.227:8083";
     driver.get(baseUrl + "/WebPruebaSenatics");   
     driver.findElement(By.name("user")).clear();
     driver.findElement(By.name("user")).sendKeys("aramirez");    
