@@ -10,10 +10,10 @@ package com.senatics.mavenselenium;
  * @author Antonio Ramirez
  */
 
-public class App {
-    
-    
-    public static void main(String[] args){
-        boolean ver = false;
-    }
-}
+//public class App {
+//    
+//    
+//    public static void main(String[] args){
+//        boolean ver = false;
+//    }
+//}
