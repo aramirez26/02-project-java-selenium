@@ -29,15 +29,18 @@ public class AppzTest {
   @Before
   public void setUp() throws Exception {
     //System.setProperty("webdriver.chrome.driver", "mavenproject1/drivers/chromedriver.exe");
-    System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-    driver = new ChromeDriver();
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
-    baseUrl = "https://www.senatics.gov.py/";
+    //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+    //driver = new ChromeDriver();
+    //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
+    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+    //System.setProperty("webdriver.gecko.driver", "mavenproject1/driver/geckodriver.exe");    
+    driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
   public void testSenaticsMecip5() throws Exception {
+    baseUrl = "https://www.senatics.gov.py/";      
     driver.get(baseUrl + "/");
     driver.findElement(By.linkText("MECIP")).click();
   }

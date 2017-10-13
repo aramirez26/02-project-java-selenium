@@ -5,6 +5,7 @@
  */
 package com.senatics.mavenselenium;
 
+import java.io.File;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -12,7 +13,9 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.Select;
 
 public class AppTest {
@@ -24,34 +27,23 @@ public class AppTest {
 @Before
   public void setUp() throws Exception {
     //System.setProperty("webdriver.chrome.driver", "mavenproject1/drivers/chromedriver.exe");
-    System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-    driver = new ChromeDriver();
+    //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+    //System.setProperty("webdriver.gecko.driver", "mavenproject1/driver/geckodriver.exe");   
+    driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
   }
 
   @Test
   public void testregistrarClientes() throws Exception {
-     
-////    baseUrl = "http://10.255.254.227:8083";
-////    driver.get(baseUrl + "/WebPruebaSenatics");   
-////    driver.findElement(By.name("user")).clear();
-////    driver.findElement(By.name("user")).sendKeys("aramirez");    
-////    driver.findElement(By.name("password")).clear();
-////    driver.findElement(By.name("password")).sendKeys("1234");
-////    driver.findElement(By.cssSelector("button")).click();
-////    driver.findElement(By.linkText("Agregar Cliente")).click();
-////    driver.findElement(By.id("citext")).clear();
-////    driver.findElement(By.id("citext")).sendKeys("5555444");
-////    driver.findElement(By.id("nombretext")).clear();
-////    driver.findElement(By.id("nombretext")).sendKeys("Justo Almada");
-////    driver.findElement(By.name("guardar")).click();
-////    driver.findElement(By.linkText("Agregar Cliente")).click();
-////    driver.findElement(By.id("citext")).clear();
-////    driver.findElement(By.id("citext")).sendKeys("44455544");
-////    driver.findElement(By.id("nombretext")).clear();
-////    driver.findElement(By.id("nombretext")).sendKeys("Juan Sosa");
-////    driver.findElement(By.name("guardar")).click();
-////    driver.findElement(By.cssSelector("button[name=\"cerrarSesion\"]")).click();
+    baseUrl = "https://www.google.com.py/";
+    driver.get(baseUrl + "/search?source=hp&q=municipalidad+de+asuncion&oq=municipali&gs_l=psy-ab.1.0.0l10.164.191.0.23727.2.2.0.0.0.0.215.215.2-1.1.0....0...1..64.psy-ab..1.1.214....0.0uDdgTgqUuU");
+    driver.findElement(By.linkText("Municipalidad de Asunción")).click();
+    driver.findElement(By.cssSelector("span.ubermenu-target-title.ubermenu-target-text")).click();
+    driver.findElement(By.xpath("//li[@id='menu-item-8003']/a/span")).click();
+    driver.findElement(By.xpath("//li[@id='menu-item-8004']/a/span")).click();
+    driver.findElement(By.xpath("//li[@id='menu-item-7964']/a/span")).click();
+    driver.findElement(By.xpath("//li[@id='menu-item-7966']/a/span")).click();
   }
 
   @After

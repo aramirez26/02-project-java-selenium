@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//package com.senatics.mavenselenium;
+package com.senatics.mavenselenium;
 
 /**
  *
  * @author Antonio Ramirez
  */
 
-//public class App {
-//    
-//    
-//    public static void main(String[] args){
-//        boolean ver = false;
-//    }
-//}
+public class App {
+    
+    
+    public static void main(String[] args){
+        boolean ver = false;
+    }
+}
