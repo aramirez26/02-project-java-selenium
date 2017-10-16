@@ -38,9 +38,8 @@ public class AppTest {
   @Test
   public void testregistrarClientes() throws Exception {
     baseUrl = "https://www.google.com.py/";
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("start-maximized");
-    options.addArguments("disable-infobars");
+    driver.navigate().to("http://uk.support.tomtom.com/app/questions  /extended_warranty");
+    driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
     driver.get(baseUrl + "/search?source=hp&q=municipalidad+de+asuncion&oq=municipali&gs_l=psy-ab.1.0.0l10.164.191.0.23727.2.2.0.0.0.0.215.215.2-1.1.0....0...1..64.psy-ab..1.1.214....0.0uDdgTgqUuU");
     driver.findElement(By.linkText("Municipalidad de Asunción")).click();
     driver.findElement(By.cssSelector("span.ubermenu-target-title.ubermenu-target-text")).click();

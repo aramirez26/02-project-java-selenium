@@ -42,9 +42,8 @@ public class AppzTest {
   @Test
   public void testSenaticsMecip5() throws Exception {
     baseUrl = "https://www.senatics.gov.py/";    
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("start-maximized");
-    options.addArguments("disable-infobars");
+    driver.navigate().to("http://uk.support.tomtom.com/app/questions  /extended_warranty");
+    driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
     driver.get(baseUrl + "/");
     driver.findElement(By.linkText("MECIP")).click();
   }
