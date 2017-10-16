@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.senatics.mavenselenium;
 
 import java.util.regex.Pattern;
@@ -11,17 +6,10 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-/**
- *
- * @author Antonio Ramirez
- */
 public class AppzTest {
-    
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -29,19 +17,13 @@ public class AppzTest {
 
   @Before
   public void setUp() throws Exception {
-    //System.setProperty("webdriver.chrome.driver", "mavenproject1/drivers/chromedriver.exe");
-    //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-    //driver = new ChromeDriver();
-    //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
-    //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-    System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe");    
     driver = new FirefoxDriver();
+    baseUrl = "http://www.chortitzer.com.py/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
-  public void testSenaticsMecip5() throws Exception {
-    baseUrl = "http://www.chortitzer.com.py/";
+  public void testTrebolPruebaSelenium() throws Exception {
     driver.get(baseUrl + "/home.php");
     driver.findElement(By.id("industria")).click();
     driver.findElement(By.xpath("//div[@id='area_botonera_interna_derecha']/ul/li[4]/a/div")).click();
@@ -88,5 +70,4 @@ public class AppzTest {
       acceptNextAlert = true;
     }
   }
-    
 }
