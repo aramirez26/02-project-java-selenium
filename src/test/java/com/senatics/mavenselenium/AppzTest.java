@@ -11,7 +11,8 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
-//import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -40,7 +41,10 @@ public class AppzTest {
 
   @Test
   public void testSenaticsMecip5() throws Exception {
-    baseUrl = "https://www.senatics.gov.py/";      
+    baseUrl = "https://www.senatics.gov.py/";    
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("start-maximized");
+    options.addArguments("disable-infobars");
     driver.get(baseUrl + "/");
     driver.findElement(By.linkText("MECIP")).click();
   }
