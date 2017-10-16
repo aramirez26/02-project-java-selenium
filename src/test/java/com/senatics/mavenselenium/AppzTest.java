@@ -17,6 +17,7 @@ public class AppzTest {
 
   @Before
   public void setUp() throws Exception {
+    System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe");      
     driver = new FirefoxDriver();
     baseUrl = "http://www.chortitzer.com.py/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
