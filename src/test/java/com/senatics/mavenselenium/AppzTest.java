@@ -32,8 +32,8 @@ public class AppzTest {
     //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
     //driver = new ChromeDriver();
     //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
-    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-    //System.setProperty("webdriver.gecko.driver", "mavenproject1/driver/geckodriver.exe");    
+    //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+    System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe");    
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }

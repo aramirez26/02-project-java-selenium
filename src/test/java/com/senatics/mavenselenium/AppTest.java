@@ -28,8 +28,8 @@ public class AppTest {
   public void setUp() throws Exception {
     //System.setProperty("webdriver.chrome.driver", "mavenproject1/drivers/chromedriver.exe");
     //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-    //System.setProperty("webdriver.gecko.driver", "mavenproject1/driver/geckodriver.exe");   
+    //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+    System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe");   
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
   }
