@@ -41,11 +41,10 @@ public class AppzTest {
 
   @Test
   public void testSenaticsMecip5() throws Exception {
-    baseUrl = "https://www.senatics.gov.py/";    
-    driver.navigate().to("http://uk.support.tomtom.com/app/questions  /extended_warranty");
-    driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-    driver.get(baseUrl + "/");
-    driver.findElement(By.linkText("MECIP")).click();
+    baseUrl = "http://www.chortitzer.com.py/";
+    driver.get(baseUrl + "/home.php");
+    driver.findElement(By.id("industria")).click();
+    driver.findElement(By.xpath("//div[@id='area_botonera_interna_derecha']/ul/li[4]/a/div")).click();
   }
 
   @After

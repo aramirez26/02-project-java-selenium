@@ -37,16 +37,11 @@ public class AppTest {
 
   @Test
   public void testregistrarClientes() throws Exception {
-    baseUrl = "https://www.google.com.py/";
-    driver.navigate().to("http://uk.support.tomtom.com/app/questions  /extended_warranty");
-    driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-    driver.get(baseUrl + "/search?source=hp&q=municipalidad+de+asuncion&oq=municipali&gs_l=psy-ab.1.0.0l10.164.191.0.23727.2.2.0.0.0.0.215.215.2-1.1.0....0...1..64.psy-ab..1.1.214....0.0uDdgTgqUuU");
-    driver.findElement(By.linkText("Municipalidad de Asunción")).click();
-    driver.findElement(By.cssSelector("span.ubermenu-target-title.ubermenu-target-text")).click();
-    driver.findElement(By.xpath("//li[@id='menu-item-8003']/a/span")).click();
-    driver.findElement(By.xpath("//li[@id='menu-item-8004']/a/span")).click();
-    driver.findElement(By.xpath("//li[@id='menu-item-7964']/a/span")).click();
-    driver.findElement(By.xpath("//li[@id='menu-item-7966']/a/span")).click();
+    baseUrl = "https://www.winrar.es/";
+    driver.get(baseUrl + "/?PHPSESSID=bep75et8m4tmkg4ork94uk7ubks48vbk");
+    driver.findElement(By.linkText("Noticias")).click();
+    driver.findElement(By.linkText("Premios")).click();
+    driver.findElement(By.linkText("Notas de prensa")).click();
   }
 
   @After
