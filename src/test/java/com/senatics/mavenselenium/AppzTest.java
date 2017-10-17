@@ -24,14 +24,14 @@ public class AppzTest {
 //    capabilities.setCapability(FirefoxDriver.MARIONETTE, "hola");
 //    WebDriver driver = new FirefoxDriver(capabilities);
     driver = new FirefoxDriver();
-    baseUrl = "http://www.chortitzer.com.py/";
     //XvfbRunMojo.ROLE.startsWith(baseUrl);
-    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
   public void testTrebolPruebaSelenium() throws Exception {
-    Thread.sleep (5000);
+    Thread.sleep (700);
+    baseUrl = "http://www.chortitzer.com.py/";
     driver.get(baseUrl + "/home.php");
     driver.findElement(By.id("industria")).click();
     driver.findElement(By.xpath("//div[@id='area_botonera_interna_derecha']/ul/li[4]/a/div")).click();

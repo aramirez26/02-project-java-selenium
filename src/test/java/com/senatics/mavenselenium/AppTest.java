@@ -1,14 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.senatics.mavenselenium;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
-import javax.servlet.http.HttpSession;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.Select;
 
 public class AppTest {
@@ -17,35 +27,24 @@ public class AppTest {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
-    public HttpSession sesion;
-
-    public HttpSession getSesion() {
-        return sesion;
-    }
-  
-  @Before
+@Before
   public void setUp() throws Exception {
-    //System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe"); 
+    //System.setProperty("webdriver.chrome.driver", "mavenproject1/drivers/chromedriver.exe");
+    //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
     //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-//    DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-//    capabilities.setCapability(FirefoxDriver.MARIONETTE, "hola");
-//    WebDriver driver = new FirefoxDriver(capabilities);
-
-    sesion.setAttribute("usuario","toni");
-    
+    //System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe");   
     driver = new FirefoxDriver();
-    baseUrl = "https://notepad-plus-plus.org/";
-    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
   }
-  
+
   @Test
-  public void testWinrarPruebaSelenium() throws Exception {
-    Thread.sleep (5000);
-    driver.get(baseUrl + "/");
-    driver.findElement(By.linkText("Download")).click();
-    driver.findElement(By.linkText("v7.3.3")).click();
-    driver.findElement(By.linkText("News")).click();
-    driver.findElement(By.linkText("Features")).click();
+  public void testregistrarClientes() throws Exception {
+    Thread.sleep (700);
+    baseUrl = "https://www.winrar.es/";
+    driver.get(baseUrl + "/?PHPSESSID=bep75et8m4tmkg4ork94uk7ubks48vbk");
+    driver.findElement(By.linkText("Noticias")).click();
+    driver.findElement(By.linkText("Premios")).click();
+    driver.findElement(By.linkText("Notas de prensa")).click();
   }
 
   @After
@@ -55,7 +54,6 @@ public class AppTest {
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
     }
-    sesion.setAttribute("usuario","");
   }
 
   private boolean isElementPresent(By by) {
@@ -66,7 +64,7 @@ public class AppTest {
       return false;
     }
   }
-
+/**/
   private boolean isAlertPresent() {
     try {
       driver.switchTo().alert();
