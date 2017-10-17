@@ -33,6 +33,12 @@
             <artifactId>selenium-firefox-driver</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.zetten</groupId>
+            <artifactId>xvfb-maven-plugin</artifactId>
+            <version>1.4.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>    <plugins>
       <plugin>
