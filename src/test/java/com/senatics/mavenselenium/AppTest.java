@@ -28,6 +28,8 @@ public class AppTest {
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
 
+  By createAccount = By.linkText("Create Account");
+  
   @Test
   public void testWinrarPruebaSelenium() throws Exception {
     Thread.sleep (5000);
