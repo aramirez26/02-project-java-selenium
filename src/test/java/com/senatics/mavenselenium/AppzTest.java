@@ -20,10 +20,10 @@ public class AppzTest {
   public void setUp() throws Exception {
     //System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe"); 
     //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-    DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-    capabilities.setCapability(FirefoxDriver.MARIONETTE, true);
-    WebDriver driver = new FirefoxDriver(capabilities);
-    //driver = new FirefoxDriver();
+    //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+//    capabilities.setCapability(FirefoxDriver.MARIONETTE, "hola");
+//    WebDriver driver = new FirefoxDriver(capabilities);
+    driver = new FirefoxDriver();
     baseUrl = "http://www.chortitzer.com.py/";
     //XvfbRunMojo.ROLE.startsWith(baseUrl);
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
