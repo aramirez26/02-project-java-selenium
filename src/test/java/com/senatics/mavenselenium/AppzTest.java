@@ -19,7 +19,7 @@ public class AppzTest {
   @Before
   public void setUp() throws Exception {
     //System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe"); 
-    //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
     DesiredCapabilities capabilities = DesiredCapabilities.firefox();
     capabilities.setCapability("marionette", true);
     WebDriver driver = new FirefoxDriver(capabilities);
