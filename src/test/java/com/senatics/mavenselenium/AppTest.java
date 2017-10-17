@@ -20,22 +20,22 @@ public class AppTest {
   public void setUp() throws Exception {
     //System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe"); 
     System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-capabilities.setCapability("marionette", true);
-WebDriver driver = new FirefoxDriver(capabilities);
+    DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+    capabilities.setCapability("marionette", true);
+    WebDriver driver = new FirefoxDriver(capabilities);
     //driver = new FirefoxDriver();
-    baseUrl = "https://www.winrar.es/";
+    baseUrl = "https://notepad-plus-plus.org/";
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
 
   @Test
   public void testWinrarPruebaSelenium() throws Exception {
     Thread.sleep (700);
-    driver.get(baseUrl + "/noticias/prensa");
-    driver.findElement(By.linkText("Inicio")).click();
-    driver.findElement(By.linkText("Noticias")).click();
-    driver.findElement(By.linkText("Premios")).click();
-    driver.findElement(By.linkText("Notas de prensa")).click();
+    driver.get(baseUrl + "/");
+    driver.findElement(By.linkText("Download")).click();
+    driver.findElement(By.linkText("v7.3.3")).click();
+    driver.findElement(By.linkText("News")).click();
+    driver.findElement(By.linkText("Features")).click();
   }
 
 //  @After
