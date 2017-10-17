@@ -7,7 +7,9 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AppzTest {
   private WebDriver driver;
@@ -20,12 +22,14 @@ public class AppzTest {
     System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe");      
     driver = new FirefoxDriver();
     baseUrl = "http://www.chortitzer.com.py/";
-    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
   public void testTrebolPruebaSelenium() throws Exception {
     driver.get(baseUrl + "/home.php");
+    WebDriverWait wait = new WebDriverWait(driver, 20);// 1 minute 
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("industria")));    
     driver.findElement(By.id("industria")).click();
     driver.findElement(By.xpath("//div[@id='area_botonera_interna_derecha']/ul/li[4]/a/div")).click();
   }
