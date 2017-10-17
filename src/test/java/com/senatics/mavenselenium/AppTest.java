@@ -21,7 +21,7 @@ public class AppTest {
     System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
     driver = new FirefoxDriver();
     baseUrl = "https://www.winrar.es/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
 
   @Test
