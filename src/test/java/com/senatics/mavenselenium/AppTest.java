@@ -26,7 +26,9 @@ public class AppTest {
   @Test
   public void testWinrarPruebaSelenium() throws Exception {
     Thread.sleep (700);
-    driver.get(baseUrl + "/noticias");
+    driver.get(baseUrl + "/noticias/prensa");
+    driver.findElement(By.linkText("Inicio")).click();
+    driver.findElement(By.linkText("Noticias")).click();
     driver.findElement(By.linkText("Premios")).click();
     driver.findElement(By.linkText("Notas de prensa")).click();
   }
