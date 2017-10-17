@@ -26,8 +26,7 @@ public class AppTest {
   @Test
   public void testWinrarPruebaSelenium() throws Exception {
     Thread.sleep (700);
-    driver.get(baseUrl + "/?PHPSESSID=bep75et8m4tmkg4ork94uk7ubks48vbk");
-    driver.findElement(By.linkText("Noticias")).click();
+    driver.get(baseUrl + "/noticias");
     driver.findElement(By.linkText("Premios")).click();
     driver.findElement(By.linkText("Notas de prensa")).click();
   }
