@@ -20,7 +20,7 @@ public class AppzTest {
     System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe");      
     driver = new FirefoxDriver();
     baseUrl = "http://www.chortitzer.com.py/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
 
   @Test
