@@ -31,7 +31,7 @@ public class AppzTest {
 
   @Test
   public void testTrebolPruebaSelenium() throws Exception {
-    Thread.sleep (700);
+    Thread.sleep (5000);
     driver.get(baseUrl + "/home.php");
     driver.findElement(By.id("industria")).click();
     driver.findElement(By.xpath("//div[@id='area_botonera_interna_derecha']/ul/li[4]/a/div")).click();

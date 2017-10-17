@@ -30,7 +30,7 @@ public class AppTest {
 
   @Test
   public void testWinrarPruebaSelenium() throws Exception {
-    Thread.sleep (700);
+    Thread.sleep (5000);
     driver.get(baseUrl + "/");
     driver.findElement(By.linkText("Download")).click();
     driver.findElement(By.linkText("v7.3.3")).click();
