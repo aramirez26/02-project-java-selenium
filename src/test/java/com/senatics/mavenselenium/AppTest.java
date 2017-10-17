@@ -18,7 +18,7 @@ public class AppTest {
 
   @Before
   public void setUp() throws Exception {
-    System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe"); 
+    //System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe"); 
     //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
     DesiredCapabilities capabilities = DesiredCapabilities.firefox();
     capabilities.setCapability("marionette", true);
