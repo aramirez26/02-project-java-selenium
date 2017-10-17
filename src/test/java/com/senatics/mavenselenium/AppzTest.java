@@ -1,5 +1,6 @@
 package com.senatics.mavenselenium;
 
+import com.github.zetten.maven.xvfb.XvfbRunMojo;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -19,12 +20,13 @@ public class AppzTest {
   @Before
   public void setUp() throws Exception {
     //System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe"); 
-    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+    //System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
     DesiredCapabilities capabilities = DesiredCapabilities.firefox();
     capabilities.setCapability("marionette", true);
     WebDriver driver = new FirefoxDriver(capabilities);
     //driver = new FirefoxDriver();
     baseUrl = "http://www.chortitzer.com.py/";
+    XvfbRunMojo.ROLE.startsWith(baseUrl);
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
 
