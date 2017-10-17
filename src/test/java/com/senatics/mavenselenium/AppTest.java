@@ -7,9 +7,7 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AppTest {
   private WebDriver driver;
@@ -27,13 +25,10 @@ public class AppTest {
 
   @Test
   public void testWinrarPruebaSelenium() throws Exception {
+    Thread.sleep (1000);
     driver.get(baseUrl + "/?PHPSESSID=bep75et8m4tmkg4ork94uk7ubks48vbk");
-    WebDriverWait wait = new WebDriverWait(driver, 20);// 1 minute 
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Noticias")));
     driver.findElement(By.linkText("Noticias")).click();
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Premios")));
     driver.findElement(By.linkText("Premios")).click();
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Notas de prensa")));
     driver.findElement(By.linkText("Notas de prensa")).click();
   }
 

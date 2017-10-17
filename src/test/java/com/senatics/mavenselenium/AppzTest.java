@@ -7,9 +7,7 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AppzTest {
   private WebDriver driver;
@@ -27,9 +25,8 @@ public class AppzTest {
 
   @Test
   public void testTrebolPruebaSelenium() throws Exception {
+    Thread.sleep (1000);
     driver.get(baseUrl + "/home.php");
-    WebDriverWait wait = new WebDriverWait(driver, 20);// 1 minute 
-    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("industria")));    
     driver.findElement(By.id("industria")).click();
     driver.findElement(By.xpath("//div[@id='area_botonera_interna_derecha']/ul/li[4]/a/div")).click();
   }
