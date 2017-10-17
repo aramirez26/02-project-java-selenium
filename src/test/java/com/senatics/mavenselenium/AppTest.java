@@ -2,6 +2,7 @@ package com.senatics.mavenselenium;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
+import javax.servlet.http.HttpSession;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -16,6 +17,12 @@ public class AppTest {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
+    public HttpSession sesion;
+
+    public HttpSession getSesion() {
+        return sesion;
+    }
+  
   @Before
   public void setUp() throws Exception {
     //System.setProperty("webdriver.gecko.driver", "mavenproject1/drivers/geckodriver.exe"); 
@@ -23,12 +30,13 @@ public class AppTest {
 //    DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 //    capabilities.setCapability(FirefoxDriver.MARIONETTE, "hola");
 //    WebDriver driver = new FirefoxDriver(capabilities);
+
+    sesion.setAttribute("usuario","toni");
+    
     driver = new FirefoxDriver();
     baseUrl = "https://notepad-plus-plus.org/";
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
-
-  By createAccount = By.linkText("Create Account");
   
   @Test
   public void testWinrarPruebaSelenium() throws Exception {
@@ -47,6 +55,7 @@ public class AppTest {
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
     }
+    sesion.setAttribute("usuario","");
   }
 
   private boolean isElementPresent(By by) {

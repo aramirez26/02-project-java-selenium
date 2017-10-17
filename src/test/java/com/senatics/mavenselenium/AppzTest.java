@@ -28,8 +28,6 @@ public class AppzTest {
     //XvfbRunMojo.ROLE.startsWith(baseUrl);
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
-  
-  By createAccount = By.linkText("Create Account");
 
   @Test
   public void testTrebolPruebaSelenium() throws Exception {
